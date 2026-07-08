@@ -1,0 +1,5 @@
+Artificial Intelligence is transforming healthcare by enabling early disease detection, personalized treatments, and faster medical research.
+
+Natural Language Processing helps computers understand human language.
+
+Text summarization is one of the most useful applications of NLP.
