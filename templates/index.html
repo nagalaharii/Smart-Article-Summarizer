@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Article Summarizer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧠 Smart Article Summarizer</h1>
+
+    <p class="subtitle">
+        Summarize Text or Website Articles using NLP and TF-IDF
+    </p>
+
+    <form method="POST">
+
+        <!-- Input Type -->
+
+        <div class="radio-group">
+
+            <label>
+                <input type="radio"
+                       name="input_type"
+                       value="text"
+                       checked
+                       onclick="showText()">
+
+                Paste Text
+            </label>
+
+            <label style="margin-left:25px;">
+
+                <input type="radio"
+                       name="input_type"
+                       value="url"
+                       onclick="showURL()">
+
+                Website URL
+            </label>
+
+        </div>
+
+        <br>
+
+        <!-- TEXT AREA -->
+
+        <div id="textBox">
+
+            <textarea
+                name="text_input"
+                rows="12"
+                placeholder="Paste your paragraph here..."></textarea>
+
+        </div>
+
+        <!-- URL BOX -->
+
+        <div id="urlBox" style="display:none;">
+
+            <input
+                type="text"
+                name="url_input"
+                placeholder="Paste Website URL here..."
+                style="
+                    width:100%;
+                    padding:15px;
+                    font-size:16px;
+                    border-radius:8px;
+                    border:1px solid #ccc;
+                    box-sizing:border-box;
+                ">
+
+        </div>
+
+        <br>
+
+        <button type="submit">
+
+            Summarize
+
+        </button>
+
+    </form>
+
+    <hr>
+
+    <h2>📄 Summary</h2>
+
+    <textarea
+        rows="8"
+        readonly>{{ summary }}</textarea>
+
+</div>
+
+<script>
+
+function showText(){
+
+    document.getElementById("textBox").style.display = "block";
+    document.getElementById("urlBox").style.display = "none";
+
+}
+
+function showURL(){
+
+    document.getElementById("textBox").style.display = "none";
+    document.getElementById("urlBox").style.display = "block";
+
+}
+
+</script>
+
+</body>
+
+</html>
